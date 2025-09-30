@@ -66,6 +66,9 @@ public class AddressBookIntegrationTest {
         assertEquals(HttpStatus.OK, getResponse.getStatusCode());
 
         AddressBook fetchedBook = getResponse.getBody();
+
+
+
         assertNotNull(fetchedBook);
         assertEquals(1, fetchedBook.getBuddies().size());
         assertEquals("123456789", fetchedBook.getBuddies().get(0).getPhoneNumber());
