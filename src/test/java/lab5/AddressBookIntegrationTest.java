@@ -3,6 +3,7 @@ package lab5;
 import lab5.BuddyInfo;
 import lab5.AddressBook;
 import org.junit.Before;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
