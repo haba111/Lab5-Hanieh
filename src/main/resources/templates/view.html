@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Address Book</title>
+    <title>Address Book</title>
 </head>
 <body>
-<h1>Address Book ID: <span th:text="${addressBook.id}"></span></h1>
 
-<h2>Buddies:</h2>
-<ul>
-    <li th:each="buddy : ${addressBook.buddies}">
-        <span th:text="${buddy.name}"></span> - <span th:text="${buddy.phoneNumber}"></span>
-    </li>
-</ul>
+<!-- If addressBook exists -->
+<div th:if="${addressBook != null}">
+    <h1>Address Book ID: <span th:text="${addressBook.id}"></span></h1>
+
+    <h2>Buddies:</h2>
+    <ul>
+        <li th:each="buddy : ${addressBook.buddies}">
+            <span th:text="${buddy.name}"></span> - <span th:text="${buddy.phoneNumber}"></span>
+        </li>
+    </ul>
+</div>
+
+<!-- If addressBook does not exist -->
+<div th:unless="${addressBook != null}">
+    <h1 style="color: red;">Address book not found.</h1>
+</div>
+
 </body>
 </html>
